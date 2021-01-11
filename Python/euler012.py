@@ -1,4 +1,3 @@
-import time
 from math import sqrt
 
 
@@ -37,11 +36,7 @@ def main():
     i = 1
     while count_divisors(i) < 500:
         i = tri_number(i)
-    return i
+    return str(int(i))
 
-
-start = time.time()
-answer = main()
-elapsed = (time.time() - start)
-
-print("result %s returned in %s seconds." % (answer, elapsed))
+if __name__ == "__main__":
+    print(main())
