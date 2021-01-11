@@ -9,4 +9,5 @@ def main():
     lst = data = sorted((rad, i) for (i, rad) in enumerate(lst))
     return str(lst[10000][1])
 
-print(main())
+if __name__ == "__main__":
+    print(main())
