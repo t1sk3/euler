@@ -1,5 +1,3 @@
-
-
 def main():
     LIMIT = 20
 

@@ -1,4 +1,4 @@
-def compute():
+def main():
 	for i in reversed(range(len(triangle) - 1)):
 		for j in range(len(triangle[i])):
 			triangle[i][j] += max(triangle[i + 1][j], triangle[i + 1][j + 1])
@@ -25,4 +25,4 @@ triangle = [
 
 
 if __name__ == "__main__":
-	print(compute())
+	print(main())

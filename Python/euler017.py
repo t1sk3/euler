@@ -1,4 +1,4 @@
-def compute():
+def main():
 	ans = sum(len(to_english(i)) for i in range(1, 1001))
 	return str(ans)
 
@@ -22,4 +22,4 @@ TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eight
 
 
 if __name__ == "__main__":
-	print(compute())
+	print(main())
