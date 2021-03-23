@@ -80,6 +80,6 @@ for i in range(1,201):
     value = compute(i)
     lst.append(value)
 #print(lst)
-print(sum(lst))
+#print(sum(lst))
 print(res)
 
