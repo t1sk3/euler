@@ -1,4 +1,5 @@
 from math import ceil, sqrt, factorial
+import string
 
 def is_prime(num):
     q = int(ceil(sqrt(num)))
@@ -70,58 +71,9 @@ def to_base(num, base):
         newlst[i] = int(newlst[i])
 
     for i in range(0, len(newlst)):
-        if newlst[i] == 10:
-            newlst[i] = 'A'
-        elif newlst[i] == 11:
-            newlst[i] = 'B'
-        elif newlst[i] == 12:
-            newlst[i] = 'C'
-        elif newlst[i] == 13:
-            newlst[i] = 'D'
-        elif newlst[i] == 14:
-            newlst[i] = 'E'
-        elif newlst[i] == 16:
-            newlst[i] = 'F' 
-        elif newlst[i] == 17:
-            newlst[i] = 'G' 
-        elif newlst[i] == 18:
-            newlst[i] = 'H' 
-        elif newlst[i] == 19:
-            newlst[i] = 'I' 
-        elif newlst[i] == 20:
-            newlst[i] = 'J' 
-        elif newlst[i] == 21:
-            newlst[i] = 'K' 
-        elif newlst[i] == 22:
-            newlst[i] = 'L' 
-        elif newlst[i] == 23:
-            newlst[i] = 'M' 
-        elif newlst[i] == 24:
-            newlst[i] = 'N' 
-        elif newlst[i] == 25:
-            newlst[i] = 'O'
-        elif newlst[i] == 26:
-            newlst[i] = 'P' 
-        elif newlst[i] == 27:
-            newlst[i] = 'Q' 
-        elif newlst[i] == 28:
-            newlst[i] = 'R' 
-        elif newlst[i] == 29:
-            newlst[i] = 'S' 
-        elif newlst[i] == 30:
-            newlst[i] = 'T' 
-        elif newlst[i] == 31:
-            newlst[i] = 'U' 
-        elif newlst[i] == 32:
-            newlst[i] = 'V' 
-        elif newlst[i] == 33:
-            newlst[i] = 'W' 
-        elif newlst[i] == 34:
-            newlst[i] = 'X' 
-        elif newlst[i] == 35:
-            newlst[i] = 'Y' 
-        elif newlst[i] == 36:
-            newlst[i] = 'Z' 
+        for j in range(10, 36):
+            if newlst[i] == j:
+                newlst[i] = string.ascii_lowercase[i-9]
 
     res = ''.join(str(d) for d in newlst)
     return res
