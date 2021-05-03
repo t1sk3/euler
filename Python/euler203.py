@@ -22,7 +22,7 @@ def main():
 
 
 def is_squarefree(num):
-    primes = primerange(0, num)
+    primes = primerange(0, num**0.5+1)
     for prime in primes:
         if prime > num**0.5:
             return True
