@@ -41,6 +41,9 @@ func solve() int {
 			if grid[i*10+j]*grid[i*10+j+1]*grid[i*10+j+2]*grid[i*10+j+3] > largest[0] {
 				largest[0] = grid[i*10+j] * grid[i*10+j+1] * grid[i*10+j+2] * grid[i*10+j+3]
 			}
+			if grid[(j*20)+i]*grid[((j+1)*20)+i]*grid[((j+2)*20)+i]*grid[((j+3)*20)+i] > largest[1] {
+				largest[1] = grid[(j*20)+i] * grid[((j+1)*20)+i] * grid[((j+2)*20)+i] * grid[((j+3)*20)+i]
+			}
 		}
 	}
 
