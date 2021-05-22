@@ -18,7 +18,6 @@ func solve() int {
 			return triangle
 		}
 	}
-	return -1
 }
 
 func count_divisors(n int) int {
