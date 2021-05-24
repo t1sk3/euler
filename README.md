@@ -1,7 +1,7 @@
 # Project Euler Solutions
 ## General
 These are by no means the best or most efficient solutions.
-Some of these solutions need a long run-time to get to the solution
+Some of these solutions need a long run-time to get to the solution (most of them don't though)
 ## Python
 The python branch makes use of nayuki's eulerlib.py as well as the eulerlib library for python
 ## Golang
