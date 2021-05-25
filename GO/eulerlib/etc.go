@@ -1,12 +1,42 @@
 package eulerlib
 
 import (
-	"strconv"
 	"math"
+	"strconv"
 	"strings"
+	"sort"
 )
 
-// Checks whether the given string is a palindrome
+// Checks whether the given intger is pandigital
+func IsPandigital(n int) bool {
+	n_string := []int{}
+	reference := []int{}
+	temp := -1
+	for _, e := range strconv.Itoa(n) {
+		temp, _ = strconv.Atoi(string(e))
+		n_string = append(n_string, temp)
+	}
+	for i := 1; i <= len(n_string); i++ {
+		reference = append(reference, i)
+	}
+	sort.Ints(n_string)
+	sort.Ints(reference)
+	return JoinSlice(n_string) == JoinSlice(reference)
+}
+
+// creates a slice containing al ldigits of the given integer as individual integers
+func MakeIntSlice(n int64) []int {
+	res := []int{}
+	n_string := strconv.FormatInt(n, 10)
+	temp := -1
+	for _, e := range n_string {
+		temp, _ = strconv.Atoi(string(e))
+		res = append(res, temp)
+	}
+	return res
+}
+
+// Checks whether the given stringis a palindrome
 func IsPalindrome(s string) bool {
 	runes := []rune(s)
 	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
@@ -15,7 +45,7 @@ func IsPalindrome(s string) bool {
 	return string(runes) == s
 }
 
-// returns the highest value in the given slice
+// returns the highest value i the given slice
 func MaxInSlice(s []int) int {
 	m := -1
 	for i, e := range s {
@@ -35,7 +65,7 @@ func MaximumBetweenInts(a int, b int) int {
 	}
 }
 
-// joins a slice of integers into a string
+// joins a slice of integers int a string
 func JoinSlice(s []int) string {
 	res := ""
 	for _, e := range s {
@@ -58,7 +88,7 @@ func RemoveDuplicates(s []string) []string {
 	return res
 }
 
-// returns the sum of the integers in the given slice
+// returns the sum of theintegers in the given slice
 func Sum(lst []int) int {
 	res := 0
 	for _, element := range lst {
@@ -67,7 +97,7 @@ func Sum(lst []int) int {
 	return res
 }
 
-// Converts the given integer to the given base and returns it as a string
+// Converts the given integer to the give base and returns it as a string
 func DecimalToBase(n int, b int) string {
 	alphabet := "abcdefghijklmnopqrstuvwxyz"
 	if b == 10 {
@@ -98,7 +128,7 @@ func DecimalToBase(n int, b int) string {
 			multiplier = 0
 		}
 	}
-	
+
 	for i := 0; i < len(newlst); i++ {
 		for j := 10; j < 36; j++ {
 			if newlst[i] == strconv.Itoa(j) {
