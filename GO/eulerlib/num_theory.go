@@ -2,6 +2,7 @@ package eulerlib
 
 import (
 	"math"
+	"strconv"
 )
 
 // returns the number of divisors the given integer has
@@ -70,4 +71,26 @@ func Factorial(n int) int {
 		res *= i
 	}
 	return res
+}
+
+// Calculates factorial digital sum
+func FactorialDigitSum(n int) int {
+	s := strconv.Itoa(n)
+	i := -1
+	res := 0
+
+	for j := 0; j < len(s); j++ {
+		i, _ = strconv.Atoi(string(s[j]))
+		res += Factorial(i)
+	}
+	return res
+}
+
+// Calculates gcd for the given integers
+func Gcd(a int, b int) int {
+	for i := b; ; i-- {
+		if a%i == 0 && b%i == 0 {
+			return i
+		}
+	}
 }
