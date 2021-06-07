@@ -17,3 +17,18 @@ func IsPrime(p int) bool {
 	}
 	return true
 }
+
+func ListPrimality(n int) []bool {
+	res := []bool{false, false}
+	if n >= 2 {
+		res = append(res, true)
+	}
+	for i := 3; i <= n; i++ {
+		if IsPrime(i) {
+			res = append(res, true)
+		} else {
+			res = append(res, false)
+		}
+	}
+	return res
+}

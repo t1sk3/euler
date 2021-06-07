@@ -2,9 +2,9 @@ package eulerlib
 
 import (
 	"math"
-	"strconv"
 	"strings"
 	"sort"
+	"strconv"
 )
 
 // Checks whether the given intger is pandigital
@@ -137,4 +137,19 @@ func DecimalToBase(n int, b int) string {
 		}
 	}
 	return strings.Join(newlst[:], "")
+}
+
+// Returns a substring of the given stri from the beginning up to a given index
+func Substring(s string, n int) string {
+	res := ""
+	if n == 0 {
+		return res
+	}
+	for i, c := range s {
+		res += string(c)
+		if i >= n-1 {
+			return res
+		}
+	}
+	return res
 }
