@@ -10,6 +10,7 @@ func IsPrime(p int) bool {
 	if end*end == p {
 		return false
 	}
+	end++
 	for i := 2; i < end; i++ {
 		if p%i == 0 {
 			return false

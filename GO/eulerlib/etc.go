@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-// Checks whether the given intger is pandigital
+// Checks whether the given integer is pandigita
 func IsPandigital(n int) bool {
 	n_string := []int{}
 	reference := []int{}
