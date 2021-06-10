@@ -65,11 +65,20 @@ func MaximumBetweenInts(a int, b int) int {
 	}
 }
 
-// joins a slice of integers int a string
+// joins a slice of integers into a string
 func JoinSlice(s []int) string {
 	res := ""
 	for _, e := range s {
 		res += strconv.Itoa(e)
+	}
+	return res
+}
+
+// joins a slice of strings into a string
+func JoinSliceString(s []string) string {
+	res := ""
+	for _, e := range s {
+		res += e
 	}
 	return res
 }
