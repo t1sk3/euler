@@ -34,6 +34,19 @@ func ListPrimality(n int) []bool {
 	return res
 }
 
+func ListPrimes(n int) []int {
+	res := []int{}
+	if n >= 2 {
+		res = append(res, 2)
+	}
+	for i := 3; i <= n; i++ {
+		if IsPrime(i) {
+			res = append(res, i)
+		}
+	}
+	return res
+}
+
 func isPrimeInt(p int) bool {
 	end := int(math.Sqrt(float64(p)))
 	if end*end == p {
