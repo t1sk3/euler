@@ -13,7 +13,7 @@ func main() {
 
 func solve() int {
 	start := 125874
-	ref := ""
+	var ref string
 	var found bool
 	for i := start + 1; ; i++ {
 		ref = eulerlib.JoinSliceString(toStringSliceSorted(i))
