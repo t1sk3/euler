@@ -66,6 +66,9 @@ func Permutations(arr []int) [][]int {
 
 // Calculates the factorial of the given integer
 func Factorial(n int) int {
+	if n == 0 {
+		return 1
+	}
 	res := 1
 	for i := 2; i < n+1; i++ {
 		res *= i
