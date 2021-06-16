@@ -12,11 +12,9 @@ func main() {
 func solve() int {
 	res := 0
 	ref := new(big.Int).SetInt64(1000000)
-	tmp := new(big.Int).SetInt64(-1)
 	for n := 1; n <= 100; n++ {
 		for r := 1; r <= n; r++ {
-			tmp = comb(n, r)
-			if tmp.Cmp(ref) == 1 {
+			if comb(n, r).Cmp(ref) == 1 {
 				res++
 			}
 		}
