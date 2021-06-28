@@ -98,7 +98,25 @@ func RemoveDuplicates(s []string) []string {
 }
 
 // returns the sum of theintegers in the given slice
-func Sum(lst []int) int {
+func Sum(lst interface{}) int64 {
+	switch v := lst.(type) {
+	case []int:
+		return int64(sumInt(v))
+	case []int64:
+		return sumInt64(v)
+	}
+	return -1
+}
+
+func sumInt64(lst []int64) int64 {
+	res := int64(0)
+	for _, element := range lst {
+		res += element
+	}
+	return res
+}
+
+func sumInt(lst []int) int {
 	res := 0
 	for _, element := range lst {
 		res += element

@@ -21,15 +21,41 @@ func CountDivisors(n int) int {
 }
 
 // returns all divisors of the given integer
-func Divisors(n int) []int {
+func Divisors(a interface{}) []int64 {
+	switch v := a.(type) {
+	case int:
+		return divisorsInt(v)
+	case int64:
+		return divisorsInt64(v)
+	}
+	return []int64{}
+}
+
+func divisorsInt(n int) []int64 {
 	end := int(math.Sqrt(float64(n)))
-	divisors := []int{}
+	divisors := []int64{}
 	if end*end == n {
-		divisors = append(divisors, end)
+		divisors = append(divisors, int64(end))
 	}
 	for i := 2; i < end; i++ {
 		if n%i == 0 {
+			divisors = append(divisors, int64(i))
+			divisors = append(divisors, int64(n/i))
+		}
+	}
+	return divisors
+}
+
+func divisorsInt64(n int64) []int64 {
+	end := int64(math.Sqrt(float64(n)))
+	divisors := []int64{}
+	if end*end == n {
+		divisors = append(divisors, end)
+	}
+	for i := int64(2); i < end; i++ {
+		if n%i == 0 {
 			divisors = append(divisors, i)
+			divisors = append(divisors, n/i)
 		}
 	}
 	return divisors
@@ -91,6 +117,11 @@ func FactorialDigitSum(n int) int {
 
 // Calculates gcd for the given integers
 func Gcd(a int, b int) int {
+	if a == 0 {
+		return b
+	} else if b == 0 {
+		return a
+	}
 	for i := b; ; i-- {
 		if a%i == 0 && b%i == 0 {
 			return i
