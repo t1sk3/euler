@@ -23,10 +23,8 @@ func solve() float64 {
 		}
 		x = f(x)
 		y = f(f(y))
-		//fmt.Println(x, y)
 	}
 	rem = (ITER - i) % i
-	//fmt.Println(rem, x)
 	for ; rem > 0; rem-- {
 		x = f(x)
 	}
