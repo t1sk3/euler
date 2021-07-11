@@ -180,3 +180,10 @@ func Substring(s string, n int) string {
 	}
 	return res
 }
+
+func ReverseString(s string) (res string) {
+	for i := len(s)-1; i >= 0; i-- {
+		res += string(s[i])
+	}
+	return
+}
