@@ -115,6 +115,37 @@ func FactorialDigitSum(n int) int {
 	return res
 }
 
+func DigitSum(a interface{}) int {
+	switch v := a.(type) {
+	case int:
+		return digitSumInt(v)
+	case string:
+		return digitSumString(v)
+	}
+	return -1
+}
+
+func digitSumInt(n int) (res int) {
+	s := strconv.Itoa(n)
+	tmp := -1
+
+	for i := 0; i < len(s); i++ {
+		tmp, _ = strconv.Atoi(string(s[i]))
+		res += tmp
+	}
+	return
+}
+
+func digitSumString(s string) (res int) {
+	tmp := -1
+
+	for i := 0; i < len(s); i++ {
+		tmp, _ = strconv.Atoi(string(s[i]))
+		res += tmp
+	}
+	return
+}
+
 // Calculates gcd for the given integers
 func Gcd(a int, b int) int {
 	if a == 0 {
