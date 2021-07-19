@@ -5,6 +5,7 @@ import (
 	"strings"
 	"sort"
 	"strconv"
+	"reflect"
 )
 
 // Checks whether the given integer is pandigita
@@ -95,6 +96,23 @@ func RemoveDuplicates(s []string) []string {
 		}
 	}
 	return res
+}
+
+func RemoveDuplicateSlices(s [][]string) (res [][]string) {
+	var tmp bool
+	for _, e := range s {
+		tmp = true
+		for _, e2 := range res {
+			if reflect.DeepEqual(e, e2) {
+				tmp = false
+				break
+			}
+		}
+		if tmp {
+			res = append(res, e)
+		}	
+	}
+	return
 }
 
 // returns the sum of theintegers in the given slice
