@@ -18,8 +18,6 @@ func solve() int {
 		tmp += string(strconv.Itoa(i))
 	}
 
-	fmt.Println("hello")
-
 	var tmp3 int
 
 	for i := 0; i <= 6; i++ {
