@@ -34,12 +34,3 @@ func getUint64ListOfLength(n int) (res []uint64) {
 	}
 	return
 }
-
-func getLength(s []int64) (res int) {
-	for _, e := range s {
-		if e != 0 {
-			res++
-		}
-	}
-	return
-}
