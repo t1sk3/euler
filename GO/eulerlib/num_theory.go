@@ -219,3 +219,7 @@ func PowMod(x int, y int, m int) int64 {
 	m1 := new(big.Int).SetInt64(int64(m))
 	return x1.Exp(x1, y1, m1).Int64()
 }
+
+func ToRadians(n float64) float64 {
+	return n*math.Pi/180
+}

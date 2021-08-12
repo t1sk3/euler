@@ -98,6 +98,18 @@ func RemoveDuplicates(s []string) []string {
 	return res
 }
 
+func RemoveDuplicatesInts(s []int) (res []int) {
+	keys := make(map[int]bool)
+
+	for _, entry := range s {
+		if _, value := keys[entry]; !value {
+			keys[entry] = true
+			res = append(res, entry)
+		}
+	}
+	return res
+}
+
 func RemoveDuplicateSlices(s [][]string) (res [][]string) {
 	var tmp bool
 	for _, e := range s {
