@@ -13,13 +13,12 @@ func main() {
 func solve() string {
 	tmp := new(big.Float).SetPrec(200).SetFloat64(2.2)
 	tmp2 := new(big.Float).SetPrec(200).SetFloat64(2.2)
-	a := new(big.Float).SetPrec(200).SetFloat64(2.2)
-	b := concat(a)
-	adder := new(big.Float).SetPrec(200).SetFloat64(0.01)
-	divider := new(big.Float).SetPrec(200).SetFloat64(0.1)
-	counter := 0
-
-	for a.Text('f', 24) != b {
+	a := new(big.Float).SetPrec(200).SetFloat64(2.2)       // I plotted a few inputs for the function concat and
+	b := concat(a)                                         // now know that the solution is a little bigger than 2.2
+	adder := new(big.Float).SetPrec(200).SetFloat64(0.01)  // In this graph it can be seen that the point where
+	divider := new(big.Float).SetPrec(200).SetFloat64(0.1) // the plotted points (y=concat(x)) cross the line given by
+	counter := 0                                           // y=x is our solution, as here both x an y are the same in
+	for a.Text('f', 24) != b {                             // both functions
 		counter++
 		tmp2, _ = new(big.Float).SetPrec(200).SetString(b)
 		if a.Cmp(tmp2) == 1 {
