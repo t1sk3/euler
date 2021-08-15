@@ -21,9 +21,9 @@ func solve() string {
 	a := new(big.Float).SetPrec(prec).SetFloat64(2.2)       // I plotted a few inputs for the function concat and
 	b := concat(a)                                          // now know that the solution is a little bigger than 2.2
 	adder := new(big.Float).SetPrec(prec).SetFloat64(0.01)  // In this graph it can be seen that the point where
-	divider := new(big.Float).SetPrec(prec).SetFloat64(0.1) // the plotted points (y=concat(x)) cross the line given by                                         // y=x is our solution, as here both x an y are the same in
-	for a.Text('f', 24) != b {                              // both functions
-		tmp2, _ = new(big.Float).SetPrec(prec).SetString(b)
+	divider := new(big.Float).SetPrec(prec).SetFloat64(0.1) // the plotted points (y=concat(x)) cross the line given by
+	for a.Text('f', 24) != b {                              // y=x is our solution, as here both x an y are the same
+		tmp2, _ = new(big.Float).SetPrec(prec).SetString(b) // in both functions
 		if a.Cmp(tmp2) == 1 {
 			a.Copy(tmp)
 			adder.Mul(adder, divider)
